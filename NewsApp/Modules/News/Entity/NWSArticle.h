@@ -1,5 +1,5 @@
 //
-//  Article.h
+//  NWSArticle.h
 //  NewsApp
 //
 //  Created by Tom Belov on 22/03/2019.

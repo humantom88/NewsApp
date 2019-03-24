@@ -9,6 +9,7 @@
 #import "NWSNewsInteractor.h"
 #import "NWSNewsFetchingService.h"
 #import "NWSArticle.h"
+#import "NWSNewsInteractorUtils.h"
 
 @interface NWSNewsInteractor ()
 
@@ -32,13 +33,20 @@
     }];
 }
 
+- (void)saveIncomingArticles:(NSArray<NWSArticle *> *)articles
+{
+    // TODO: save incoming articles to DB
+    
+    return;
+}
+
 - (NWSArticle *)getArticleFromDictionary:(NSDictionary *)articleDict
 {
     NWSArticle *article = [[NWSArticle alloc] init];
     
     article.author = articleDict[@"author"];
     article.source = articleDict[@"source"][@"name"];
-    article.content = articleDict[@"content"]; // TODO: erase (\[\+\d+\schars\])
+    article.content = [NWSNewsInteractorUtils removeRemainingCharCountFromContent:articleDict[@"content"]];
     article.desc = articleDict[@"desc"];
     article.publishedAt = articleDict[@"publishedAt"];
     article.title = articleDict[@"title"];

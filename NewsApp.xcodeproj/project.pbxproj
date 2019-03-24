@@ -21,9 +21,8 @@
 		1F7429382243A7DA00D4BCDF /* NWSNewsFetchingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7429372243A7DA00D4BCDF /* NWSNewsFetchingService.m */; };
 		1F74293B2244C89A00D4BCDF /* NWSArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F74293A2244C89A00D4BCDF /* NWSArticle.m */; };
 		1F74293E2245101100D4BCDF /* NWSArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F74293D2245101100D4BCDF /* NWSArticleViewController.m */; };
-		1F74294522451FE100D4BCDF /* OriginalArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F74294422451FE100D4BCDF /* OriginalArticleViewController.m */; };
 		1F7429492247468700D4BCDF /* NWSNewsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7429482247468700D4BCDF /* NWSNewsAssembly.m */; };
-		1F74294C224763DC00D4BCDF /* NWSApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F74294B224763DC00D4BCDF /* NWSApplicationAssembly.m */; };
+		1F74294F224781D900D4BCDF /* NWSNewsInteractorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F74294E224781D900D4BCDF /* NWSNewsInteractorUtils.m */; };
 		539AB4C5B56BE69835A7AC96 /* libPods-NewsApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC031E5F0438C80C3841A21B /* libPods-NewsApp.a */; };
 		5765412FA80FF80263EF2882 /* libPods-NewsAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0983A0B0A163A3AB6B19A6CE /* libPods-NewsAppTests.a */; };
 /* End PBXBuildFile section */
@@ -72,12 +71,10 @@
 		1F74293C2245101100D4BCDF /* NWSArticleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NWSArticleViewController.h; sourceTree = "<group>"; };
 		1F74293D2245101100D4BCDF /* NWSArticleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NWSArticleViewController.m; sourceTree = "<group>"; };
 		1F74293F2245181100D4BCDF /* NWSArticleViewControllerInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NWSArticleViewControllerInput.h; sourceTree = "<group>"; };
-		1F74294322451FE100D4BCDF /* OriginalArticleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OriginalArticleViewController.h; sourceTree = "<group>"; };
-		1F74294422451FE100D4BCDF /* OriginalArticleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OriginalArticleViewController.m; sourceTree = "<group>"; };
 		1F7429472247468700D4BCDF /* NWSNewsAssembly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NWSNewsAssembly.h; sourceTree = "<group>"; };
 		1F7429482247468700D4BCDF /* NWSNewsAssembly.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NWSNewsAssembly.m; sourceTree = "<group>"; };
-		1F74294A224763DC00D4BCDF /* NWSApplicationAssembly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NWSApplicationAssembly.h; sourceTree = "<group>"; };
-		1F74294B224763DC00D4BCDF /* NWSApplicationAssembly.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NWSApplicationAssembly.m; sourceTree = "<group>"; };
+		1F74294D224781D900D4BCDF /* NWSNewsInteractorUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NWSNewsInteractorUtils.h; sourceTree = "<group>"; };
+		1F74294E224781D900D4BCDF /* NWSNewsInteractorUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NWSNewsInteractorUtils.m; sourceTree = "<group>"; };
 		B06838866D3380B976942ACB /* Pods-NewsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppTests.release.xcconfig"; path = "Target Support Files/Pods-NewsAppTests/Pods-NewsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C25D12BB9F34FDF6D77A66E0 /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D9FEF01499A6198C87D7BA37 /* Pods-NewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,8 +131,6 @@
 				1F742808223CCDF000D4BCDF /* LaunchScreen.storyboard */,
 				1F742803223CCDF000D4BCDF /* NewsApp.xcdatamodeld */,
 				1F74280B223CCDF000D4BCDF /* Info.plist */,
-				1F74294A224763DC00D4BCDF /* NWSApplicationAssembly.h */,
-				1F74294B224763DC00D4BCDF /* NWSApplicationAssembly.m */,
 			);
 			path = NewsApp;
 			sourceTree = "<group>";
@@ -183,8 +178,6 @@
 				1F7429262243832D00D4BCDF /* NWSNewsTableViewController.m */,
 				1F74292C2243A4C100D4BCDF /* NWSNewsTableViewOutput.h */,
 				1F74292D2243A4D000D4BCDF /* NWSNewsTableViewInput.h */,
-				1F74294322451FE100D4BCDF /* OriginalArticleViewController.h */,
-				1F74294422451FE100D4BCDF /* OriginalArticleViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,6 +207,8 @@
 				1F7429302243A6FC00D4BCDF /* NWSNewsInteractor.m */,
 				1F7429322243A70D00D4BCDF /* NWSNewsInteractorInput.h */,
 				1F7429332243A71B00D4BCDF /* NWSNewsInteractorOutput.h */,
+				1F74294D224781D900D4BCDF /* NWSNewsInteractorUtils.h */,
+				1F74294E224781D900D4BCDF /* NWSNewsInteractorUtils.m */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -415,15 +410,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F7429272243832D00D4BCDF /* NWSNewsTableViewController.m in Sources */,
-				1F74294522451FE100D4BCDF /* OriginalArticleViewController.m in Sources */,
 				1F7429492247468700D4BCDF /* NWSNewsAssembly.m in Sources */,
 				1F742924224381D900D4BCDF /* NWSNewsTableViewCell.m in Sources */,
 				1F74293B2244C89A00D4BCDF /* NWSArticle.m in Sources */,
 				1F7427FC223CCDF000D4BCDF /* AppDelegate.m in Sources */,
 				1F74280D223CCDF000D4BCDF /* main.m in Sources */,
 				1F74293E2245101100D4BCDF /* NWSArticleViewController.m in Sources */,
-				1F74294C224763DC00D4BCDF /* NWSApplicationAssembly.m in Sources */,
 				1F742805223CCDF000D4BCDF /* NewsApp.xcdatamodeld in Sources */,
+				1F74294F224781D900D4BCDF /* NWSNewsInteractorUtils.m in Sources */,
 				1F74292B2243A4A500D4BCDF /* NWSNewsPresenter.m in Sources */,
 				1F7429382243A7DA00D4BCDF /* NWSNewsFetchingService.m in Sources */,
 				1F7429312243A6FC00D4BCDF /* NWSNewsInteractor.m in Sources */,

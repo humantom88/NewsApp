@@ -17,10 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NWSNewsAssembly : TyphoonAssembly
 
-- (NWSNewsTableViewController *)newsTableViewController;
-- (NWSNewsPresenter *)newsPresenter;
 - (NWSNewsInteractor *)newsInteractor;
-
+- (NWSNewsPresenter *)newsPresenter;
+- (NWSNewsTableViewController *)newsTableViewController;
 
 @end
 

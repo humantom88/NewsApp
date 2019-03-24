@@ -37,10 +37,13 @@
     return;
 }
 
-- (NSDictionary *)parseDictionaryFromData:(NSData *)data {
+- (NSDictionary *)parseDictionaryFromData:(NSData *)data
+{
     NSError *error = nil;
     
-    NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+    NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data
+                                                            options:NSJSONReadingAllowFragments
+                                                              error:&error];
     
     if(error) {
         NSLog(@"Error: unable to serialize incoming data: %@", error);
@@ -52,25 +55,27 @@
 
 - (void)sendHTTPRequest:(NSMutableURLRequest *)request withCallback:(void(^)(NSData *))callback
 {
-    // NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    [[[NSURLSession sharedSession]
-      dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-          NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
-          if (statusCode != 200) {
-              NSLog(@"Error getting %@, HTTP status code %li", request.URL, statusCode);
-              return;
-          }
-          //[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]
-          callback(data);
-      }] resume];
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request
+                                     completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                          NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+                                                          if (statusCode != 200) {
+                                                              NSLog(@"Error getting %@, HTTP status code %li", request.URL, statusCode);
+                                                              return;
+                                                          }
+                                                          //[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]
+                                                          callback(data);
+                                                      }
+      ] resume];
 }
 
 - (NSString *)buildNewsURL
 {
     // TODO: organize URL building
-    //return @"http://localhost";
+    
+    // For bank network
+    // return @"http://localhost";
 
-    // Doesn't work yet, need to configure plist security settings
+    // Doesnt'w work in bank network
     return @"https://newsapi.org/v2/top-headlines?country=us&apiKey=1f369406c2194047bcb6fdeba23e2414";
 }
 

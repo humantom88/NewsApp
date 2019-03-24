@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NWSNewsTableViewController : UITableViewController <NWSNewsTableViewInput>
 
 @property (strong, nonatomic) id<NWSNewsTableViewOutput> output;
-// - (instancetype)initWithPresenter:(id<NWSNewsTableViewOutput>)presenter;
 
 @end
 

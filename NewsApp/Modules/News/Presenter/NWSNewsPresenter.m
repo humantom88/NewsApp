@@ -17,31 +17,6 @@
 
 @implementation NWSNewsPresenter
 
-//- (instancetype)initWithView:(id<NWSNewsTableViewInput>)view
-//{
-//    if (self = [super init]) {
-//        self.view = view;
-//        self.interactor = [[NWSNewsInteractor alloc] init];
-//    }
-//
-//    return self;
-//}
-
-- (instancetype)initWithView:(id<NWSNewsTableViewInput>)view andInteractor:(id<NWSNewsInteractorInput>)interactor
-{
-    if (self = [super init]) {
-        self.view = view;
-        self.interactor = interactor;
-    }
-    
-    return self;
-}
-
-- (id)init
-{
-    return [self initWithView:nil andInteractor:nil];
-}
-
 - (void)loadNewsData
 {
     __weak typeof(self) weakSelf = self;
@@ -50,7 +25,7 @@
         weakSelf.articles = articles;
         [weakSelf displayNews];
     }];
-    
+
     return;
 }
 

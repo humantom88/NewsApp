@@ -60,7 +60,6 @@
 	</dict>
 	<key>TyphoonInitialAssemblies</key>
 	<array>
-		<string>NWSApplicationAssembly</string>
 		<string>NWSNewsAssembly</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>

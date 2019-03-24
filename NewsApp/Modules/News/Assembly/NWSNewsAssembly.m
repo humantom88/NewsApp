@@ -15,16 +15,6 @@
 
 @implementation NWSNewsAssembly
 
-- (NWSNewsTableViewController *)newsTableViewController
-{
-    return [TyphoonDefinition withClass:[NWSNewsTableViewController class]
-                          configuration:^(TyphoonDefinition *definition)
-                                        {
-                                            [definition injectProperty:@selector(output)
-                                                                  with:[self newsPresenter]];
-                                        }];
-}
-
 - (NWSNewsInteractor *)newsInteractor
 {
     return [TyphoonDefinition withClass:[NWSNewsInteractor class]
@@ -45,6 +35,16 @@
                                             [definition injectProperty:@selector(interactor)
                                                                   with:[self newsInteractor]];
                                         }];
+}
+
+- (NWSNewsTableViewController *)newsTableViewController
+{
+    return [TyphoonDefinition withClass:[NWSNewsTableViewController class]
+                          configuration:^(TyphoonDefinition *definition)
+            {
+                [definition injectProperty:@selector(output)
+                                      with:[self newsPresenter]];
+            }];
 }
 
 @end
