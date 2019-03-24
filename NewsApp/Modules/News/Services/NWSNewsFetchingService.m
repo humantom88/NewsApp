@@ -76,7 +76,11 @@
     // return @"http://localhost";
 
     // Doesnt'w work in bank network
-    return @"https://newsapi.org/v2/top-headlines?country=us&apiKey=1f369406c2194047bcb6fdeba23e2414";
+    NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
+    NSString *apiKey = [info objectForKey:@"NWSNewsApiKey"];
+    NSString *country = [info objectForKey:@"NWSNewsCountry"];
+    
+    return [NSString stringWithFormat:@"https://newsapi.org/v2/top-headlines?country=%@&apiKey=%@", country, apiKey];
 }
 
 @end
