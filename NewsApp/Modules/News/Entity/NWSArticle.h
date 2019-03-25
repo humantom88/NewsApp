@@ -15,11 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSString *content;
 @property (strong, nonatomic) NSString *desc;
-@property (strong, nonatomic) NSString *publishedAt;
+@property (strong, nonatomic) NSDate *publishedAt;
 @property (strong, nonatomic) NSString *source;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *urlToImage;
+
+- (NSString *)getPublishedAtString;
 
 @end
 

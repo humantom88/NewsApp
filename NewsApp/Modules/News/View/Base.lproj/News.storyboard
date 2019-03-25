@@ -93,27 +93,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8fZ-MY-O2N">
-                                <rect key="frame" x="20" y="125" width="335" height="522"/>
+                                <rect key="frame" x="20" y="135.5" width="335" height="511.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3q-5B-pDs">
+                                <rect key="frame" x="20" y="108.5" width="335" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tcb-yE-rqb" firstAttribute="leading" secondItem="IRi-bS-May" secondAttribute="leading" constant="20" id="2Qt-qM-aSb"/>
-                            <constraint firstItem="8fZ-MY-O2N" firstAttribute="top" secondItem="tcb-yE-rqb" secondAttribute="bottom" constant="20" id="5Ia-2r-Ubg"/>
+                            <constraint firstItem="m3q-5B-pDs" firstAttribute="leading" secondItem="IRi-bS-May" secondAttribute="leading" constant="20" id="F0x-BQ-86F"/>
                             <constraint firstItem="IRi-bS-May" firstAttribute="trailing" secondItem="8fZ-MY-O2N" secondAttribute="trailing" constant="20" id="G6P-Ya-yZb"/>
                             <constraint firstItem="tcb-yE-rqb" firstAttribute="top" secondItem="IRi-bS-May" secondAttribute="top" constant="20" id="JlR-hw-nkn"/>
+                            <constraint firstItem="m3q-5B-pDs" firstAttribute="top" secondItem="tcb-yE-rqb" secondAttribute="bottom" constant="4" id="NXS-I8-4Na"/>
                             <constraint firstItem="IRi-bS-May" firstAttribute="trailing" secondItem="tcb-yE-rqb" secondAttribute="trailing" constant="20" id="NuQ-qg-WJ1"/>
                             <constraint firstItem="8fZ-MY-O2N" firstAttribute="leading" secondItem="IRi-bS-May" secondAttribute="leading" constant="20" id="bZM-nW-9V1"/>
+                            <constraint firstItem="8fZ-MY-O2N" firstAttribute="top" secondItem="m3q-5B-pDs" secondAttribute="bottom" constant="12" id="rXR-b6-ITQ"/>
+                            <constraint firstItem="IRi-bS-May" firstAttribute="trailing" secondItem="m3q-5B-pDs" secondAttribute="trailing" constant="20" id="sUd-Xg-H9M"/>
                             <constraint firstItem="IRi-bS-May" firstAttribute="bottom" secondItem="8fZ-MY-O2N" secondAttribute="bottom" constant="20" id="ykm-O5-GYf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IRi-bS-May"/>
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="8fZ-MY-O2N" id="GMw-n0-HdN"/>
+                        <outlet property="publishedAtLabel" destination="m3q-5B-pDs" id="Kne-6P-6gJ"/>
                         <outlet property="titleLabel" destination="tcb-yE-rqb" id="MSi-gc-FQo"/>
                     </connections>
                 </viewController>

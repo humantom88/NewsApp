@@ -19,17 +19,28 @@
     
     NSError *error = nil;
     
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(\\[\\+\\d+\\schars)\\]" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(\\[\\+\\d+\\s\\w+)\\]"
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:&error];
     
     if (error) {
         NSLog(@"Error: %@", error);
         return nil;
     }
     
-    NSString *modifiedString = [regex stringByReplacingMatchesInString:content options:0 range:NSMakeRange(0, [content length]) withTemplate:@""];
+    NSString *modifiedString = [regex stringByReplacingMatchesInString:content
+                                                               options:0
+                                                                 range:NSMakeRange(0, [content length]) withTemplate:@""];
     
     return modifiedString;
 }
 
++ (NSDate *)parsePublishedAtDate:(NSString *)dateString
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
+    
+    return [formatter dateFromString:dateString];
+}
 
 @end

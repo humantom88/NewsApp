@@ -48,7 +48,7 @@
     article.source = articleDict[@"source"][@"name"];
     article.content = [NWSNewsInteractorUtils removeRemainingCharCountFromContent:articleDict[@"content"]];
     article.desc = articleDict[@"desc"];
-    article.publishedAt = articleDict[@"publishedAt"];
+    article.publishedAt = [NWSNewsInteractorUtils parsePublishedAtDate:articleDict[@"publishedAt"]];
     article.title = articleDict[@"title"];
     article.url = articleDict[@"url"];
     article.urlToImage = articleDict[@"urlToImage"];

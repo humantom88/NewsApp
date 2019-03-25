@@ -12,6 +12,7 @@
 @interface NWSArticleViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *publishedAtLabel;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 
 @end
@@ -26,6 +27,7 @@
     
     self.titleLabel.text = self.article.title;
     self.contentTextView.text = self.article.content;
+    self.publishedAtLabel.text = [self.article getPublishedAtString];
 }
 
 @end

@@ -10,4 +10,19 @@
 
 @implementation NWSArticle
 
+- (NSString *)getPublishedAtString
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    
+    return [formatter stringFromDate:self.publishedAt];
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@: %@", self.publishedAt, self.title];
+}
+
 @end
