@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NWSNewsInteractorUtils : NSObject
 
 + (NSString *)removeRemainingCharCountFromContent:(NSString *)content;
-+ (NSDate *)parsePublishedAtDate:(NSString *)dateString;
++ (NSDate *)dateFromString:(NSString *)dateString;
 
 @end
 

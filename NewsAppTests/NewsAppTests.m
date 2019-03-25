@@ -32,14 +32,10 @@
     NSString *expectedResult = @"The end of special text to te… ";
 
     XCTAssertTrue([result isEqualToString:expectedResult]);
-}
-
-- (void)testPerformanceExample
-{
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+    
+    NSString *dateString = @"2019-03-21T09:33:45Z"
+    NSString *resultDate = [NWSNewsInteractorUtils parsePublishedAtDate:dateString];
+    NSString *expectedDateResult = [resultDate ]
 }
 
 @end

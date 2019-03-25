@@ -57,12 +57,14 @@
 {
     [[[NSURLSession sharedSession] dataTaskWithRequest:request
                                      completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                         
                                                           NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+                                         
                                                           if (statusCode != 200) {
                                                               NSLog(@"Error getting %@, HTTP status code %li", request.URL, statusCode);
                                                               return;
                                                           }
-                                                          //[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]
+                                                          
                                                           callback(data);
                                                       }
       ] resume];
