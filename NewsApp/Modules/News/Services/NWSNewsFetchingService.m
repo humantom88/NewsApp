@@ -75,14 +75,14 @@
     // TODO: organize URL building
     
     // For bank network
-    return @"http://localhost";
+    // return @"http://localhost";
 
     // Doesnt'w work in bank network
-//    NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
-//    NSString *apiKey = [info objectForKey:@"NWSNewsApiKey"];
-//    NSString *country = [info objectForKey:@"NWSNewsCountry"];
-//
-//    return [NSString stringWithFormat:@"https://newsapi.org/v2/top-headlines?country=%@&apiKey=%@", country, apiKey];
+    NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
+    NSString *apiKey = [info objectForKey:@"NWSNewsApiKey"];
+    NSString *country = [info objectForKey:@"NWSNewsCountry"];
+
+    return [NSString stringWithFormat:@"https://newsapi.org/v2/top-headlines?country=%@&apiKey=%@", country, apiKey];
 }
 
 @end
