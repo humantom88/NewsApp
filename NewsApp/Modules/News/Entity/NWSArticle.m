@@ -12,17 +12,17 @@
 
 - (NSString *)getPublishedAtString
 {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *formatter = [NSDateFormatter new];
     
     [formatter setDateStyle:NSDateFormatterShortStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
     
-    return [formatter stringFromDate:self.publishedAt];
+    return [formatter stringFromDate:_publishedAt];
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@: %@", self.publishedAt, self.title];
+    return [NSString stringWithFormat:@"%@: %@", _publishedAt, _title];
 }
 
 @end

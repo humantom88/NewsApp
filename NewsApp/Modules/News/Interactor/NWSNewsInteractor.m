@@ -42,7 +42,7 @@
 
 - (NWSArticle *)getArticleFromDictionary:(NSDictionary *)articleDict
 {
-    NWSArticle *article = [[NWSArticle alloc] init];
+    NWSArticle *article = [NWSArticle new];
     
     article.author = articleDict[@"author"];
     article.source = articleDict[@"source"][@"name"];

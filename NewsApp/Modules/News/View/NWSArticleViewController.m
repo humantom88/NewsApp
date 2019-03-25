@@ -19,15 +19,15 @@
 
 @implementation NWSArticleViewController
 
-@synthesize article;
+@synthesize article = _article;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.titleLabel.text = self.article.title;
-    self.contentTextView.text = self.article.content;
-    self.publishedAtLabel.text = [self.article getPublishedAtString];
+    self.titleLabel.text = _article.title;
+    self.contentTextView.text = _article.content;
+    self.publishedAtLabel.text = [_article getPublishedAtString];
 }
 
 @end

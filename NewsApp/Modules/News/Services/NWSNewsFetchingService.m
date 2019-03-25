@@ -16,7 +16,7 @@
     static NWSNewsFetchingService *sharedInstance = nil;
     
     dispatch_once(&token, ^(void){
-        sharedInstance = [[self alloc] init];
+        sharedInstance = [self new];
     });
     
     return sharedInstance;
@@ -25,7 +25,7 @@
 
 - (void)fetchNewsWithCallback:(void (^)(NSDictionary *))callback
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    NSMutableURLRequest *request = [NSMutableURLRequest new];
     
     [request setHTTPMethod:@"GET"];
     [request setURL:[NSURL URLWithString:[self buildNewsURL]]];

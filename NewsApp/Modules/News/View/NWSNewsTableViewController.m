@@ -65,7 +65,7 @@
         
         NWSArticleViewController *destination = (NWSArticleViewController *)[segue destinationViewController];
         
-        destination.article = self.output.articles[indexPath.row];
+        destination.article = _output.articles[indexPath.row];
     }
 
 }
